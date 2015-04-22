@@ -1,0 +1,29 @@
+{
+  "name": "horsepower-converter",
+  "version": "0.0.1",
+  "author": "Tyler Walters <tyler@tylerwalters.com>",
+  "description": "Convert horsepower to something more interesting like tyrannosaurus-rexpower, tortoisepower, or space-shuttlepower.",
+  "keywords": [
+    "horsepower"
+  ],
+  "homepage": "https://github.com/tylerwalters/horsepower-converter",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tylerwalters/horsepower-converter"
+  },
+  "scripts": {
+    "prepublish": "gulp",
+    "test": "gulp test"
+  },
+  "main": "dist/horsepower-converter.min.js",
+  "devDependencies": {
+    "chai": "^2.2.0",
+    "gulp": "^3.8.11",
+    "gulp-jshint": "^1.10.0",
+    "gulp-mocha": "^2.0.1",
+    "gulp-uglify": "^1.2.0",
+    "jshint-stylish": "^1.0.1",
+    "mocha": "^2.2.4"
+  }
+}
