@@ -1,0 +1,96 @@
+// Fonts
+
+$headline: "factoria",sans-serif;
+$body: "proxima-nova",sans-serif;
+
+// Colors
+
+$dark: #242021;
+$darkBlue: #395674;
+$lightBlue: #1168A5;
+$tan: #F5CEAD;
+$red: #E94131;
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+  max-height: 100%;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
+  font-family: $body;
+  color: #fff;
+}
+
+body {
+  height: 100%;
+  max-height: 100%;
+  font-size: 100%;
+  background: $dark;
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.results, .home {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+h1, h2, h3, .h1, .h2, .h3 {
+  font-family: $headline;
+}
+
+h1, .h1 {
+  font-size: 2em;
+  line-height: 1.25;
+  text-transform: uppercase;
+  text-align: center;
+  color: $lightBlue;
+}
+
+.content {
+  border: 1px solid darken($lightBlue, 10%);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: $darkBlue;
+
+  aside {
+    padding: 1em;
+    background: lighten($darkBlue, 10%);
+  }
+
+  main {
+    padding: 1em;
+
+    .display {
+      padding: 1em;
+      background: $dark;
+      color: $tan;
+      font-family: $headline;
+    }
+  }
+}
+
+.button-submit {
+  background: $red;
+  width: 100%;
+  color: #fff;
+  border: 1px solid $lightBlue;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;;
+}
+
+input {
+  color: #333;
+}

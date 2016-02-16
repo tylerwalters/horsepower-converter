@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Convert horsepower into something more interesting like Tyrannosaurus Rex, Space Shuttle, or Tortoise power.">
+
+  <title>Horsepower Converter by Tyler Walters</title>
+
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/pure/0.6.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/pure/0.6.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/pure/0.6.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+</head>
+
+<body>
+<div class="container">
+  <header class="pure-g">
+    <div class="title pure-u-1">
+      <h1>Horsepower Converter</h1>
+    </div>
+  </header>
+
+  <section class="pure-g content">
+    <aside class="form pure-u-1 pure-u-sm-1-4">
+      <form class="pure-form pure-form-stacked">
+        <label for="inputVehicle">What do you drive?</label>
+        <input type="text" id="inputVehicle" data-js="vehicle">
+
+        <label for="inputHorsepower">What is its horsepower?</label>
+        <input type="number" id="inputHorsepower" data-js="horsepower">
+
+        <p class="radio-heading">What power would you like?</p>
+
+        <label for="inputTypeTrex" class="pure-radio">
+          <input type="radio" id="inputTypeTrex" name="type" value="trex" data-js="type"> Tyrannosaurus Rex
+        </label>
+
+        <label for="inputTypeTortoise" class="pure-radio">
+          <input type="radio" id="inputTypeTortoise" name="type" value="tortoise" data-js="type"> Tortoise
+        </label>
+
+        <label for="inputTypeSpaceShuttle" class="pure-radio">
+          <input type="radio" id="inputTypeSpaceShuttle" name="type" value="spaceShuttle" data-js="type"> Space Shuttle
+        </label>
+
+        <button class="button-submit pure-button button-xlarge" data-js="submit">Submit</button>
+      </form>
+    </aside>
+
+    <main class="view home pure-u-1 pure-u-sm-3-4 active" data-js="home">
+      <p>As I was driving one day, I considered the term horsepower. It is an interesting way to measure the power of an engine. Then I thought it would be even more interesting to measure the power of my engine in terms of a Tyrannosaurus Rex. And so the Horsepower Converter was born.</p>
+
+      <p>Where horsepower for a specific conversion was not available I used a trap speed formula (weight * (velocity/234)^3) to estimate using weight and speed. For example, the Tyrannosaurus Rex has a weight of 17990 lbs and had a speed of 18 mile per hour (both estimated obviously) which gives us 8.1884387801548 horsepower.</p>
+
+      <p>This site was built by <a href="https://tylerwalters.com">Tyler Walters</a>. The code powering this website is open source and available on GitHub:
+        <a href="https://github.com/tylerwalters/horsepower-converter">Horsepower Converter</a>.</p>
+    </main>
+
+    <main class="view results pure-u-1 pure-u-sm-3-4" data-js="results">
+
+    </main>
+  </section>
+</div>
+
+<script src="js/bundle.js"></script>
+<script src="https://use.typekit.net/dit5ftr.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+</body>
+</html>

@@ -2,28 +2,36 @@
   "name": "horsepower-converter",
   "version": "0.0.1",
   "author": "Tyler Walters <tyler@tylerwalters.com>",
-  "description": "Convert horsepower to something more interesting like tyrannosaurus-rexpower, tortoisepower, or space-shuttlepower.",
+  "description": "ES6 module to convert horsepower to something more interesting like tyrannosaurus-rexpower, tortoisepower, or space-shuttlepower.",
   "keywords": [
     "horsepower"
   ],
   "homepage": "https://github.com/tylerwalters/horsepower-converter",
+  "main": "dist/main.min.js",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/tylerwalters/horsepower-converter"
   },
   "scripts": {
-    "prepublish": "gulp",
-    "test": "gulp test"
+    "clean": "rm -rf dist",
+    "copy": "cp src/index.html dist/index.html",
+    "build": "webpack --progress && cp src/index.html dist/index.html",
+    "watch": "webpack --progress --watch"
   },
-  "main": "dist/horsepower-converter.min.js",
+  "dependencies": {
+    "koa": "^1.1.2"
+  },
   "devDependencies": {
-    "chai": "^2.2.0",
-    "gulp": "^3.8.11",
-    "gulp-jshint": "^1.10.0",
-    "gulp-mocha": "^2.0.1",
-    "gulp-uglify": "^1.2.0",
-    "jshint-stylish": "^1.0.1",
-    "mocha": "^2.2.4"
+    "babel-cli": "^6.5.1",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-loader": "^6.2.2",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5",
+    "node-sass": "^3.4.2",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.13"
   }
 }

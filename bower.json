@@ -4,8 +4,7 @@
   "authors": [
     "Tyler Walters <tyler@tylerwalters.com>"
   ],
-  "description": "Convert horsepower to something more interesting like tyrannosaurus-rexpower, tortoisepower, or space-shuttlepower.",
-  "main": "dist/horsepower-converter.min.js",
+  "description": "Convert horsepower to something more interesting.",
   "keywords": [
     "horsepower"
   ],
