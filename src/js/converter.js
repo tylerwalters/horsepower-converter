@@ -28,13 +28,14 @@ export default (() => {
    * @param type
    * @returns {*}
    */
-  const getConversion = (type) => {
-    return _conversions[type];
-  };
+  const getConversion = (type) => _conversions[type];
 
-  const trapSpeed = (weight, velocity) => {
-    return weight * (velocity/234)^3;
-  };
+  /**
+   *
+   * @param weight
+   * @param velocity
+   */
+  const trapSpeed = (weight, velocity) => weight * (velocity/234)^3;
 
   /**
    *
@@ -42,9 +43,7 @@ export default (() => {
    * @param type
    * @returns {number}
    */
-  const convert = (hp, type) => {
-    return parseInt(hp) / _conversions[type].horsepower;
-  };
+  const convert = (hp, type) => parseInt(hp) / _conversions[type].horsepower;
 
   return {
     convert: convert,
