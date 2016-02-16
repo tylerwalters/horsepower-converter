@@ -1,6 +1,6 @@
 {
   "name": "horsepower-converter",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "Tyler Walters <tyler@tylerwalters.com>",
   "description": "ES6 module to convert horsepower to something more interesting like tyrannosaurus-rexpower, tortoisepower, or space-shuttlepower.",
   "keywords": [
