@@ -1,15 +1,5 @@
-// Fonts
-
-$headline: "factoria",sans-serif;
-$body: "proxima-nova",sans-serif;
-
-// Colors
-
-$dark: #242021;
-$darkBlue: #395674;
-$lightBlue: #1168A5;
-$tan: #F5CEAD;
-$red: #E94131;
+@import "normalize";
+@import "variables";
 
 html {
   box-sizing: border-box;
@@ -35,6 +25,8 @@ body {
 .container {
   max-width: 980px;
   margin: 0 auto;
+  font-size: 1em;
+  line-height: 1.5em;
 }
 
 .results, .home {
@@ -57,6 +49,19 @@ h1, .h1 {
   color: $lightBlue;
 }
 
+a {
+  color: lighten($lightBlue, 20%);
+  -webkit-transition: color ease 0.2s;
+  -moz-transition: color ease 0.2s;
+  -ms-transition: color ease 0.2s;
+  -o-transition: color ease 0.2s;
+  transition: color ease 0.2s;
+
+  &:hover {
+    color: lighten($lightBlue, 30%);
+  }
+}
+
 .content {
   border: 1px solid darken($lightBlue, 10%);
   -webkit-border-radius: 4px;
@@ -71,6 +76,12 @@ h1, .h1 {
 
   main {
     padding: 1em;
+
+    p {
+      &:first-child {
+        margin-top: 0;
+      }
+    }
 
     .display {
       padding: 1em;
