@@ -22,6 +22,10 @@ body {
   background: $dark;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .container {
   max-width: 980px;
   margin: 0 auto;
@@ -72,15 +76,17 @@ a {
   aside {
     padding: 1em;
     background: lighten($darkBlue, 10%);
+
+    .input-group {
+      margin-bottom: 2em;
+    }
   }
 
   main {
-    padding: 1em;
+    padding: 2em;
 
-    p {
-      &:first-child {
-        margin-top: 0;
-      }
+    h2 {
+      margin-top: 0;
     }
 
     .display {
@@ -88,6 +94,13 @@ a {
       background: $dark;
       color: $tan;
       font-family: $headline;
+    }
+
+    #homeLink {
+      cursor: pointer;
+      float: right;
+      display: block;
+      text-align: right;
     }
   }
 }
@@ -104,4 +117,19 @@ a {
 
 input {
   color: #333;
+}
+
+input[type=text], input[type=number] {
+  width: 100%;
+}
+
+.error {
+  border: 1px solid $red;
+  background: lighten($red, 30%);
+  padding: 0 10px;
+  font-size: .8em;
+  color: $dark;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;;
 }
