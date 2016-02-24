@@ -121,6 +121,8 @@ export const actionSubmit = () => {
     return false;
   }
 
+  ga('send', 'event', 'Conversion', type, `{$vehicle} | {$horsepower}`);
+
   convertedPower = hp.convert(horsepower, type);
   conversion = hp.getConversion(type);
 
