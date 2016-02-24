@@ -15,12 +15,12 @@
   },
   "scripts": {
     "clean": "rm -rf dist",
-    "copy": "cp src/index.html dist/index.html",
-    "build": "webpack --progress && cp src/index.html dist/index.html",
+    "build": "webpack --progress",
     "watch": "webpack --progress --watch"
   },
   "dependencies": {
-    "koa": "^1.1.2"
+    "koa": "^1.1.2",
+    "koa-static": "^2.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.5.1",
