@@ -1,5 +1,4 @@
 .idea
 *.iml
 
-dist/js
 node_modules
