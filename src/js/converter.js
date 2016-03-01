@@ -4,7 +4,7 @@
 // Tyrannosaurus Rex: weight - 17990lbs, top speed - 18mph, horsepower (trap speed formula): 8.1884387801548 (http://www.livescience.com/23868-tyrannosaurus-rex-facts.html)
 // Tortoise: weight - 661.4lb, top speed - 0.2mph, horsepower (trap speed formula): 4.1295868602465E-7 (http://www.speedofanimals.com/animals/galapagos_tortoise)
 
-const _conversions = {
+const conversions = {
   trex: {
     name: 'Tyrannosaurus Rex',
     horsepower: 8.1884387801548,
@@ -27,7 +27,7 @@ const _conversions = {
  * @param type
  * @returns {*}
  */
-export const getConversion = (type) => _conversions[type];
+export const getConversion = type => conversions[type];
 
 /**
  *
@@ -42,4 +42,4 @@ export const trapSpeed = (weight, velocity) => weight * (velocity/234)^3;
  * @param type
  * @returns {number}
  */
-export const convert = (hp, type) => parseInt(hp) / _conversions[type].horsepower;
+export const convert = (hp, type) => parseInt(hp) / conversions[type].horsepower;

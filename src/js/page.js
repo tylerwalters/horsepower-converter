@@ -5,18 +5,22 @@ const _vehicle    = document.querySelector('[data-js=vehicle]');
 const _horsepower = document.querySelector('[data-js=horsepower]');
 const _types      = document.querySelectorAll('[data-js=type]');
 
-const _getSelectedType = (types) => {
+/**
+ *
+ * @param types
+ * @returns {string}
+ */
+function getSelectedType(types) {
   const selected = [].filter.call(types, type => type.checked);
 
   return selected[0] ? selected[0].value : '';
-};
+}
 
 /**
  *
  * @param view
- * @private
  */
-const _changeView = (view) => {
+function changeView(view) {
   const views = document.querySelectorAll('.view');
   const activeSelector = document.querySelector('[data-js=' + view + ']');
 
@@ -27,40 +31,44 @@ const _changeView = (view) => {
   }
 
   activeSelector.classList.add('active');
-};
+}
 
 /**
  *
  * @param vehicle
  * @param hp
  * @param conversion
- * @private
  */
-const _showResults = (vehicle, hp, conversion) => {
+function showResults(vehicle, hp, conversion) {
   const results = document.querySelector('[data-js=results]');
-  const template = `<a id="homeLink" data-js="home-link">Back Home</a>
-                  <h2>${conversion.name} Power</h2>
-                  <p>Your</p>
-                  <div class="display">${vehicle}</div>
-                  <p>has</p>
-                  <div class="display">${formatNumber(hp)} ${conversion.name} power</div>`;
 
-  let homeLink;
+  results.innerHTML = `<a id="homeLink" data-js="home-link">Back Home</a>
+                       <h2>${conversion.name} Power</h2>
+                       <p>Your</p>
+                       <div class="display">${vehicle}</div>
+                       <p>has</p>
+                       <div class="display">${formatNumber(hp)} ${conversion.name} power</div>`;
+  changeView('results');
+  buildHomeLink();
+}
 
-  results.innerHTML = template;
-  _changeView('results');
-  _buildHomeLink();
-};
-
-const _buildHomeLink = () => {
+/**
+ *
+ */
+function buildHomeLink() {
   const homeLink = document.querySelector('[data-js=home-link]');
 
   homeLink.addEventListener('click', () => {
-    _changeView('home');
+    changeView('home');
   })
-};
+}
 
-const _validateValues = (entry) => {
+/**
+ *
+ * @param entry
+ * @returns {boolean}
+ */
+function validateValue(entry) {
   switch (entry.type) {
     case 'vehicle':
       return entry.value.length > 0;
@@ -69,9 +77,14 @@ const _validateValues = (entry) => {
     case 'type':
       return entry.value.length > 0;
   }
-};
+}
 
-const _toggleError = (type, display = 'hide') => {
+/**
+ *
+ * @param type
+ * @param display
+ */
+function toggleError(type, display = 'hide') {
   const error = document.querySelector('[data-js=error-' + type + ']');
 
   switch (display) {
@@ -82,39 +95,40 @@ const _toggleError = (type, display = 'hide') => {
       error.classList.add('hidden');
       break;
   }
-};
+}
 
 /**
  *
+ * @returns {boolean}
  */
-export const actionSubmit = () => {
+export function actionSubmit() {
   const vehicle = _vehicle.value;
   const horsepower = _horsepower.value;
-  const type = _getSelectedType(_types);
+  const type = getSelectedType(_types);
 
   let errors = false,
       convertedPower,
       conversion;
 
-  if (_validateValues({type: 'vehicle', value: vehicle})) {
-    _toggleError('vehicle', 'hide');
+  if (validateValue({type: 'vehicle', value: vehicle})) {
+    toggleError('vehicle', 'hide');
   } else {
     errors = true;
-    _toggleError('vehicle', 'show');
+    toggleError('vehicle', 'show');
   }
 
-  if (_validateValues({type: 'horsepower', value: horsepower})) {
-    _toggleError('horsepower', 'hide');
+  if (validateValue({type: 'horsepower', value: horsepower})) {
+    toggleError('horsepower', 'hide');
   } else {
     errors = true;
-    _toggleError('horsepower', 'show');
+    toggleError('horsepower', 'show');
   }
 
-  if (_validateValues({type: 'type', value: type})) {
-    _toggleError('type', 'hide');
+  if (validateValue({type: 'type', value: type})) {
+    toggleError('type', 'hide');
   } else {
     errors = true;
-    _toggleError('type', 'show');
+    toggleError('type', 'show');
   }
 
   if (errors) {
@@ -126,7 +140,7 @@ export const actionSubmit = () => {
   convertedPower = hp.convert(horsepower, type);
   conversion = hp.getConversion(type);
 
-  _showResults(vehicle, convertedPower, conversion);
-};
+  showResults(vehicle, convertedPower, conversion);
+}
 
 
